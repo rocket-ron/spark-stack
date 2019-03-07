@@ -7,12 +7,12 @@ RUN apt-get update \
 
 # ZEPPELIN
 ENV ZEPPELIN_RELEASE_VERSION=0
-ENV ZEPPELIN_MAJOR_VERSION=7
-ENV ZEPPELIN_MINOR_VERSION=2
+ENV ZEPPELIN_MAJOR_VERSION=8
+ENV ZEPPELIN_MINOR_VERSION=1
 ENV ZEPPELIN_HOME=/usr/zeppelin-${ZEPPELIN_RELEASE_VERSION}.${ZEPPELIN_MAJOR_VERSION}.${ZEPPELIN_MINOR_VERSION}
 ENV PATH $PATH:$ZEPPELIN_HOME/bin
 RUN curl -sL --retry 3 \
-  "http://www-us.apache.org/dist/zeppelin/zeppelin-0.7.2/zeppelin-0.7.2-bin-all.tgz" \
+  "http://mirrors.ocf.berkeley.edu/apache/zeppelin/zeppelin-0.8.1/zeppelin-0.8.1-bin-all.tgz" \
   | gunzip \
   | tar -x -C /usr/ \
   && mv /usr/zeppelin-${ZEPPELIN_RELEASE_VERSION}.${ZEPPELIN_MAJOR_VERSION}.${ZEPPELIN_MINOR_VERSION}-bin-all /usr/zeppelin-${ZEPPELIN_RELEASE_VERSION}.${ZEPPELIN_MAJOR_VERSION}.${ZEPPELIN_MINOR_VERSION} \

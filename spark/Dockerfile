@@ -1,11 +1,11 @@
-FROM ubuntu:16.04
+FROM ubuntu:latest
 
 RUN apt-get update \
- && apt-get install -y software-properties-common python-software-properties \
+ && apt-get install -y software-properties-common \
  && add-apt-repository ppa:git-core/ppa \
  && apt-get update \
  && apt-get install -y curl unzip git \
-    python-pip python-dev \
+    python-pip python-dev python3.6 \
  && pip install py4j \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
